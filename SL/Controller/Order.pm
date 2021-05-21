@@ -980,6 +980,7 @@ sub action_price_popup {
 sub action_create_part {
   my ($self) = @_;
 
+  $::lxdebug->dump(0, "bb: form", $::form);
   my $previousform = $::auth->save_form_in_session(non_scalars => 1);
 
   my $callback     = $self->url_for(
@@ -993,7 +994,7 @@ sub action_create_part {
   my @redirect_params = (
     controller => 'Part',
     action     => 'add',
-    part_type  => 'assembly',
+    part_type  => $::form->{add_item}->{create_part_type},
     callback   => $callback,
     show_abort => 1,
   );
