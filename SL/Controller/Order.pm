@@ -993,7 +993,7 @@ sub action_create_part {
   my @redirect_params = (
     controller => 'Part',
     action     => 'add',
-    part_type  => 'part',
+    part_type  => 'assembly',
     callback   => $callback,
     show_abort => 1,
   );
