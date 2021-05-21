@@ -777,6 +777,8 @@ sub action_unit_changed {
 sub action_add_item {
   my ($self) = @_;
 
+  delete $::form->{add_item}{create_part_type};
+
   my $form_attr = $::form->{add_item};
 
   return unless $form_attr->{parts_id};
